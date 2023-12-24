@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<label for="telefoneCelular">Telefone Celular/Residencial</label>
+<input type="tel" name="telefoneCelular" id="telefoneCelular" minlength="13" maxlength="14" placeholder="(XX) XXXX-XXXX" required>
+
+<script>
+// Formata numero de telefone
+$(document).ready(function () {
+  var options = {
+    onKeyPress: function (phone, e, field, options) {
+      // Checa se o número de dígitos é maior que 14 (incluindo a máscara e o nono dígito)
+      var mask = (phone.length > 14) ? '(00) 00000-0000' : '(00) 0000-00009';
+      $('#telefoneCelular').mask(mask, options);
+    }
+  };
+  // Aplica a máscara inicial.
+  $('#telefoneCelular').mask('(00) 0000-00009', options);
+});
