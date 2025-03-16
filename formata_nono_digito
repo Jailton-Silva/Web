@@ -17,3 +17,4 @@ $(document).ready(function () {
   // Aplica a máscara inicial.
   $('#telefoneCelular').mask('(00) 0000-00009', options);
 });
+</script>
